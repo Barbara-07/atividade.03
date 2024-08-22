@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('containtsText', (selector, text) =>{
+    return cy.get(`[data-test=${selector}]`).containts(text)
+})
+
+// Cypress.Command.add('getByData', (seletor) => {
+//     return cy.get(`[data-test=${seletor}]`)
+// })
