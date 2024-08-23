@@ -16,5 +16,4 @@ describe('Formulário cadastro', () => {
   /* clicamos no botão cadastro e inserimos os dados de cadastro para testar o cenário feliz, onde o cadastro
   
   será realizado com sucesso. */
-  }})
-
+ }})
