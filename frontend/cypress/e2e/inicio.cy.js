@@ -8,6 +8,8 @@ describe('Pagina inicial', () => {
       cy.agetByData('titulo-principal', 'Experimente mais liberdade no controle da sua vida financeira. Crie sua conta com a gente')
   
     })
+
+    
   })
 })
 
