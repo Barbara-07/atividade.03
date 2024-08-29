@@ -1,7 +1,28 @@
+
+describe('Menu de navegação', () => {
+    context('Resolução de 720p', () => {
+      beforeEach(() => {
+        /* Roda os testes como se fossem em um monitor de 720p de resolução */
+        cy.viewport(1280, 720)
+      })
+      
+    })
+
+    context('Resolução do iphone-5 ', () => {
+      beforeEach(() => {
+        /* roda os testes como se fossem em um dispositivo com a resolução de um iphone-5 */
+        cy.viewport('iphone-5')
+      })
+      
+    })
+  })
+
+
 describe('Testando dispositivos móveis', () => {
     it('Deve existir um menu burguer', () => {
         cy.visit('/')
-        
+        cy.viewport(550,750)
+        cy.viewport('iphone-6')
         cy.getByData('botao-login').click()
         cy.getByData('email-input').type('neilton@alura.com')
         cy.getByData('senha-input').type('123456')
@@ -12,6 +33,9 @@ describe('Testando dispositivos móveis', () => {
         cy.getByData('menu-burguer').click()
         cy.getByData('menu-lateral').find('a').eq(3).click()			
 
-        cy.location('pathname').should('eq','/home/investimentos')			
+        cy.location('pathname').should('eq','/home/investimentos')
+        
+        cy.viewport(550, 750) /* Configura o tamanho da janela para 550px x 750px */
+		cy.viewport('iphone-6') /* Configura o tamanho da janela para 375px x 667px */
     })
 })
